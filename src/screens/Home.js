@@ -29,17 +29,17 @@ export default function Home() {
 
 
   return (
-    <div>
+    <div className="con">
       <div>
         <NavBar />
       </div>
-      <div>
+      {/* <div>
         <div id="carouselExampleFade" className="carousel slide carousel-fade" data-bs-ride="carousel">
           <div className="carousel-inner" id="carousell">
             <div className="carousel-caption" style={{ zIndex: "10" }}>
               <div className="d-flex justify-content-centre">
                 <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" value={search} onChange={(e)=>{setsearch(e.target.value)}} />
-                {/*</button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> */}
+            
               </div>
             </div>
             <div className="carousel-item active">
@@ -61,12 +61,12 @@ export default function Home() {
             <span className="visually-hidden">Next</span>
           </button>
         </div>
-      </div>
-      <div className="container">
+      </div> */}
+      <div className="container" style={{background: "linear-gradient(to right, #ff00cc, #333399)", boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.5)"}}>
         {
           foodCat !== []
             ? foodCat.map((data) => {
-              return (<div className="row md-3">
+              return (<div className="row md-3 mt-4">
                 <div key={data._id} className="fs-3 m-3" >
                   {data.CategoryName}
                 </div>
@@ -92,7 +92,7 @@ export default function Home() {
 
         }
       </div>
-      <div>
+      <div className="footer">
         <Footer />
       </div>
     </div>
