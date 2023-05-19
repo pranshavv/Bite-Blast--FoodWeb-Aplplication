@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import Card from "../components/Card";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
+import Hero from "../components/Hero";
+
 
 export default function Home() {
   const [search, setsearch] = useState([]);
@@ -33,6 +35,9 @@ export default function Home() {
       <div>
         <NavBar />
       </div>
+      <div className="herooo">
+        <Hero/>
+      </div>
       {/* <div>
         <div id="carouselExampleFade" className="carousel slide carousel-fade" data-bs-ride="carousel">
           <div className="carousel-inner" id="carousell">
@@ -62,7 +67,8 @@ export default function Home() {
           </button>
         </div>
       </div> */}
-      <div className="container" style={{background: "linear-gradient(to right, #ff00cc, #333399)", boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.5)"}}>
+
+      <div className="container" id="scroll-container" style={{background: "linear-gradient(to right, #ff00cc, #333399)", boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.5)"}}>
         {
           foodCat !== []
             ? foodCat.map((data) => {

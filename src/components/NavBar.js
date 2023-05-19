@@ -19,7 +19,7 @@ export default function NavBar(props) {
   return (
     <div>
       <nav className="navbar navbar-expand-lg position-sticky">
-        <Link className="navbar-brand fs-1 fst-italic" to="/">
+        <Link className="navbar-brand" to="/">
 
           Bite Blast
         </Link>
@@ -35,14 +35,14 @@ export default function NavBar(props) {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav me-auto mb-2">
+          <ul className="navbar-nav">
             <li className="nav-item">
-              <Link className="nav-link active fs-5" aria-current="page" to="/">
+              <Link className="nav-link" aria-current="page" to="/">
                 Home
               </Link>
             </li>
             {(localStorage.getItem("authToken")) ?
-              <Link className="nav-link active fs-5" aria-current="page" to="/myOrder">
+              <Link className="nav-link" aria-current="page" to="/myOrder">
                 My Orders
               </Link>
               : ""}
@@ -50,17 +50,17 @@ export default function NavBar(props) {
           {(!localStorage.getItem("authToken")) ?
             <div className="d-flex">
 
-              <Link className="btn bg-white text-success mx-1" to="/login">Login</Link>
-              <Link className="btn bg-white text-success mx-1" to="/createuser ">Sign Up</Link>
+              <Link className="btn" to="/login">Login</Link>
+              <Link className="btn" to="/createuser ">Sign Up</Link>
             </div>
             :
             <div>
-              <div className="btn bg-white text-succcess mx-2"  onClick={()=>{setCartView(true)}}>
+              <div className="btn"  onClick={()=>{setCartView(true)}}>
                 My Cart {"  "}
                 {<Badge pill bg="danger">{data.length}</Badge>}
               </div>
               {cartView ? <Modal onClose={() => setCartView(false)}><Cart></Cart></Modal> : ""}
-              <div className="btn bg-white text-succcess mx-2" onClick={handleLogout}>
+              <div className="btn" onClick={handleLogout}>
                 Logout
               </div>
             </div>

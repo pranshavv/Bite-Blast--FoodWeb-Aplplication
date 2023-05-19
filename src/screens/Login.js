@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import seller from '../screens/seller.png'
+import login from '../Assets/login.png'
+
 
 
 export default function Login() {
@@ -63,7 +64,7 @@ export default function Login() {
             </div>
             <div className='signup-image'>
               <figure>
-                <img src={seller} alt='img' />
+                <img src={login} alt='img' />
               </figure>
             </div>
           </div>
